@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Viewer.WindowsAzure.Tests", "GroupDocs.Viewer.WindowsAzure.Tests\GroupDocs.Viewer.WindowsAzure.Tests.csproj", "{E5A1D342-51FA-4C01-BE2A-24759F0D17B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Viewer.AzureBlobStorage.Tests", "GroupDocs.Viewer.WindowsAzure.Tests\GroupDocs.Viewer.AzureBlobStorage.Tests.csproj", "{E5A1D342-51FA-4C01-BE2A-24759F0D17B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Viewer.WindowsAzure", "GroupDocs.Viewer.WindowsAzure\GroupDocs.Viewer.WindowsAzure.csproj", "{01DB8177-A48F-403B-879A-01316069860D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupDocs.Viewer.AzureBlobStorage", "GroupDocs.Viewer.WindowsAzure\GroupDocs.Viewer.AzureBlobStorage.csproj", "{01DB8177-A48F-403B-879A-01316069860D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6F9DE1C-8572-495D-BA0F-8DD69133F956}
 	EndGlobalSection
 EndGlobal

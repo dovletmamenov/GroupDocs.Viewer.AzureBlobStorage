@@ -54,17 +54,15 @@
   <ItemGroup>
     <Compile Include="FileStorageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestFileStore.cs" />
-    <Compile Include="ViewerHandlerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GroupDocs.Viewer.WindowsAzure\GroupDocs.Viewer.WindowsAzure.csproj">
+    <ProjectReference Include="..\GroupDocs.Viewer.WindowsAzure\GroupDocs.Viewer.AzureBlobStorage.csproj">
       <Project>{01db8177-a48f-403b-879a-01316069860d}</Project>
-      <Name>GroupDocs.Viewer.WindowsAzure</Name>
+      <Name>GroupDocs.Viewer.AzureBlobStorage</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Dovlet Mamenov</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/dovletmamenov/GroupDocs.Viewer.AzureBlobStorage/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/dovletmamenov/GroupDocs.Viewer.AzureBlobStorage</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>The first release of the package.</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>Groupdocs.Viewer  AzureBlobStorage</tags>
+  </metadata>
+</package>

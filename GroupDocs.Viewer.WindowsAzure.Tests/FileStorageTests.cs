@@ -1,13 +1,12 @@
-﻿using GroupDocs.Viewer.Storage;
+﻿using GroupDocs.Viewer.Domain.Html;
+using GroupDocs.Viewer.Handler;
+using GroupDocs.Viewer.Storage;
 using NUnit.Framework;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace GroupDocs.Viewer.WindowsAzure.Tests
+namespace GroupDocs.Viewer.AzureBlobStorage.Tests
 {
     [TestFixture]
     public class FileStorageTests
@@ -97,6 +96,21 @@ namespace GroupDocs.Viewer.WindowsAzure.Tests
                 Assert.True(getStream != null);
                 Assert.AreEqual(testStreamLength, getStream.Length);
             }
+        }
+
+        [Test]
+        public void ShouldRender()
+        {
+            string filePath = "sample/file.txt";
+            using (Stream testStream = GetTestFileStream())
+            {
+                _fileStorage.SaveFile(filePath, testStream);
+            }
+
+            FileStorage storage = new FileStorage(TestContainerName);
+            ViewerHtmlHandler handler = new ViewerHtmlHandler(storage);
+            List<PageHtml> pages = handler.GetPages("file.txt");
+
         }
 
         private Stream GetTestFileStream()

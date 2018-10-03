@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace GroupDocs.Viewer.WindowsAzure
+namespace GroupDocs.Viewer.AzureBlobStorage
 {
     public class OutputStream : MemoryStream
     {

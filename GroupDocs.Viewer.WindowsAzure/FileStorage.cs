@@ -7,7 +7,7 @@ using Microsoft.Azure;
 using Microsoft.WindowsAzure.Storage.Blob;
 using System.Text.RegularExpressions;
 
-namespace GroupDocs.Viewer.WindowsAzure
+namespace GroupDocs.Viewer.AzureBlobStorage
 {
     public class FileStorage : IFileStorage
     {
