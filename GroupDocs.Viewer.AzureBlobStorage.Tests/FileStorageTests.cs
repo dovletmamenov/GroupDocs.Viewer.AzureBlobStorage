@@ -1,4 +1,5 @@
-﻿using GroupDocs.Viewer.Domain.Html;
+﻿using GroupDocs.Viewer.Config;
+using GroupDocs.Viewer.Domain.Html;
 using GroupDocs.Viewer.Handler;
 using GroupDocs.Viewer.Storage;
 using NUnit.Framework;
@@ -11,13 +12,13 @@ namespace GroupDocs.Viewer.AzureBlobStorage.Tests
     [TestFixture]
     public class FileStorageTests
     {
-        private FileStorage _fileStorage;
+        private AzureBlobStorage _fileStorage;
         private const string TestContainerName = "test";
 
         [OneTimeSetUp]
         public void SetupFixture()
         {
-            _fileStorage = new FileStorage(TestContainerName);
+            _fileStorage = new AzureBlobStorage(TestContainerName);
         }
 
         [OneTimeTearDown]
@@ -30,7 +31,7 @@ namespace GroupDocs.Viewer.AzureBlobStorage.Tests
         [Test]
         public void ShouldInitializeStorage()
         {
-            Assert.DoesNotThrow(() => { FileStorage fileStorage = new FileStorage(TestContainerName); });
+            Assert.DoesNotThrow(() => { AzureBlobStorage fileStorage = new AzureBlobStorage(TestContainerName); });
         }
 
         [Test]
@@ -101,16 +102,21 @@ namespace GroupDocs.Viewer.AzureBlobStorage.Tests
         [Test]
         public void ShouldRender()
         {
+            // Create a file to be rendered
             string filePath = "sample/file.txt";
             using (Stream testStream = GetTestFileStream())
             {
                 _fileStorage.SaveFile(filePath, testStream);
             }
 
-            FileStorage storage = new FileStorage(TestContainerName);
+            // Create IFileStorage and run the rendering
+            AzureBlobStorage storage = new AzureBlobStorage(TestContainerName);
             ViewerHtmlHandler handler = new ViewerHtmlHandler(storage);
-            List<PageHtml> pages = handler.GetPages("file.txt");
+            List<PageHtml> pages = handler.GetPages("sample/file.txt");
 
+           
+            Assert.True(pages.Count > 0);
+            Assert.NotNull(pages[0].HtmlContent);
         }
 
         private Stream GetTestFileStream()

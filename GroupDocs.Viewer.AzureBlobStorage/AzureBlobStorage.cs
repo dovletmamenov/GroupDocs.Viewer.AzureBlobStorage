@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 
 namespace GroupDocs.Viewer.AzureBlobStorage
 {
-    public class FileStorage : IFileStorage
+    public class AzureBlobStorage : IFileStorage
     {
         private CloudStorageAccount _storageAccount;
         private CloudBlobClient _blobClient;
@@ -20,7 +20,7 @@ namespace GroupDocs.Viewer.AzureBlobStorage
         /// </summary>
         public const char Delimiter = '/';
 
-        public FileStorage(string containerName)
+        public AzureBlobStorage(string containerName)
         {
             _storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
             _blobClient = _storageAccount.CreateCloudBlobClient();
